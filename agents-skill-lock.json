@@ -1,0 +1,194 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-04-17T09:57:24.003Z",
+      "updatedAt": "2026-04-17T09:57:24.003Z"
+    },
+    "make-interfaces-feel-better": {
+      "source": "jakubkrehel/make-interfaces-feel-better",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/make-interfaces-feel-better.git",
+      "skillPath": "skills/make-interfaces-feel-better/SKILL.md",
+      "skillFolderHash": "0e139a2b14eeb25f9581a786a951edee35ddc53c",
+      "installedAt": "2026-04-17T19:22:18.889Z",
+      "updatedAt": "2026-04-17T19:22:18.889Z"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skill.git",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "skillFolderHash": "0e6f8d7223a0abe73f81e890b3ec76257029a834",
+      "installedAt": "2026-04-17T19:22:31.658Z",
+      "updatedAt": "2026-04-17T19:22:31.658Z"
+    },
+    "threejs-animation": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-animation/SKILL.md",
+      "skillFolderHash": "0e5c91a99a4838307f8a46d8178d6cd2e0fd3af0",
+      "installedAt": "2026-04-20T11:57:08.627Z",
+      "updatedAt": "2026-04-20T11:57:08.627Z"
+    },
+    "threejs-fundamentals": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-fundamentals/SKILL.md",
+      "skillFolderHash": "918e26abdcc434d3ef7563043a25a97a6209b411",
+      "installedAt": "2026-04-20T11:57:08.981Z",
+      "updatedAt": "2026-04-20T11:57:08.981Z"
+    },
+    "threejs-geometry": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-geometry/SKILL.md",
+      "skillFolderHash": "a8b8defe755f4505ac0258863e05727e37ce056f",
+      "installedAt": "2026-04-20T11:57:09.409Z",
+      "updatedAt": "2026-04-20T11:57:09.409Z"
+    },
+    "threejs-lighting": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-lighting/SKILL.md",
+      "skillFolderHash": "1a3d8f6fd58d38f7978be27790b959e1dbebf39d",
+      "installedAt": "2026-04-20T11:57:09.851Z",
+      "updatedAt": "2026-04-20T11:57:09.851Z"
+    },
+    "threejs-loaders": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-loaders/SKILL.md",
+      "skillFolderHash": "ce4ab5647b2584a3b8b12d9a6f23604cfc59ca50",
+      "installedAt": "2026-04-20T11:57:10.221Z",
+      "updatedAt": "2026-04-20T11:57:10.221Z"
+    },
+    "threejs-materials": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-materials/SKILL.md",
+      "skillFolderHash": "c063dc0ffc95c7cf2bbfc183967c5dda9ac93df7",
+      "installedAt": "2026-04-20T11:57:10.667Z",
+      "updatedAt": "2026-04-20T11:57:10.667Z"
+    },
+    "threejs-postprocessing": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-postprocessing/SKILL.md",
+      "skillFolderHash": "699f67f0c2f4d50cd493b03c895e0074f7b47a7f",
+      "installedAt": "2026-04-20T11:57:11.015Z",
+      "updatedAt": "2026-04-20T11:57:11.015Z"
+    },
+    "threejs-shaders": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-shaders/SKILL.md",
+      "skillFolderHash": "5b8907aa3a6497db9281a6a6b4f76437ad78faee",
+      "installedAt": "2026-04-20T11:57:11.385Z",
+      "updatedAt": "2026-04-20T11:57:11.385Z"
+    },
+    "threejs-textures": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudai-x/threejs-skills.git",
+      "skillPath": "skills/threejs-textures/SKILL.md",
+      "skillFolderHash": "0931e05e06091787935ef83a33d25a7e58772b73",
+      "installedAt": "2026-04-20T11:57:11.805Z",
+      "updatedAt": "2026-04-20T11:57:11.805Z"
+    },
+    "brandkit": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/brandkit/SKILL.md",
+      "skillFolderHash": "d278ff748cafab01e4ae5dd7758fc0b53258621c",
+      "installedAt": "2026-06-04T08:54:32.946Z",
+      "updatedAt": "2026-06-04T08:54:32.946Z"
+    },
+    "design-taste-frontend": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "skillFolderHash": "a6d128e53b4ec0238baee751dde33bf707adb5ec",
+      "installedAt": "2026-06-04T08:54:32.948Z",
+      "updatedAt": "2026-06-04T08:54:32.948Z"
+    },
+    "gpt-taste": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/gpt-tasteskill/SKILL.md",
+      "skillFolderHash": "c87d529ad945cd35985b19475bf53f41682d4f69",
+      "installedAt": "2026-06-04T08:54:32.949Z",
+      "updatedAt": "2026-06-04T08:54:32.949Z"
+    },
+    "high-end-visual-design": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/soft-skill/SKILL.md",
+      "skillFolderHash": "1b5943432ddd1b980206968c529a323cc992dbec",
+      "installedAt": "2026-06-04T08:54:32.949Z",
+      "updatedAt": "2026-06-04T08:54:32.949Z"
+    },
+    "image-to-code": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/image-to-code-skill/SKILL.md",
+      "skillFolderHash": "701b3cb89c061fcf98a98f639e0b0b5c0b492479",
+      "installedAt": "2026-06-04T08:54:32.950Z",
+      "updatedAt": "2026-06-04T08:54:32.950Z"
+    },
+    "industrial-brutalist-ui": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/brutalist-skill/SKILL.md",
+      "skillFolderHash": "f812ede7e5c34cf680f629911e9f9ac05e416cf4",
+      "installedAt": "2026-06-04T08:54:32.950Z",
+      "updatedAt": "2026-06-04T08:54:32.950Z"
+    },
+    "redesign-existing-projects": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/redesign-skill/SKILL.md",
+      "skillFolderHash": "d9cffe56d26d4af7687299e391a7be1cfaf46c1b",
+      "installedAt": "2026-06-04T08:54:32.951Z",
+      "updatedAt": "2026-06-04T08:54:32.951Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "antigravity-cli",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed"
+  ]
+}

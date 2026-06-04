@@ -1,0 +1,5 @@
+# local-only / machine-specific overrides — never tracked
+*.bak-*
+*.bak
+*.orig
+.DS_Store
