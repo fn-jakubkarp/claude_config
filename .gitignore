@@ -3,3 +3,7 @@
 *.bak
 *.orig
 .DS_Store
+
+# secrets & machine-local — never tracked
+secrets.env
+settings.local.json
