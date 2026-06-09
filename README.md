@@ -56,7 +56,20 @@ Real keys live in `secrets.env` (gitignored). `install.sh` sources `secrets.env`
 placeholders, and writes each server into `~/.claude.json` at **user scope** via
 `claude mcp add-json`. Any server whose secret is missing is skipped with a warning.
 
-Currently configured: `filesystem` (no secret) and `magic` (needs `MAGIC_API_KEY`).
+Currently configured (all restored at user scope):
+
+| Server | Runtime | Secret |
+|--------|---------|--------|
+| `filesystem` | `npx @modelcontextprotocol/server-filesystem` | — |
+| `magic` | `npx @21st-dev/magic` | `MAGIC_API_KEY` |
+| `sequential-thinking` | `npx @modelcontextprotocol/server-sequential-thinking` | — |
+| `fetch` | `uvx mcp-server-fetch` | — (needs `uvx`) |
+
+`sync.sh` captures **both** user-scope and project-scope servers from `~/.claude.json`,
+promoting project-scope ones to user scope so they work everywhere. Servers bound to a
+machine-specific path are dropped via the `SKIP` set in `sync.sh` — currently just
+`obsidian` (`@bitbonsai/mcpvault` targets a hardcoded vault dir). Add names to `SKIP` for
+any other path-bound server you don't want vendored.
 
 > The claude.ai **Figma** connector is account-level (not local config); it restores by
 > signing into your Claude account, so it isn't tracked here.
@@ -72,7 +85,8 @@ Enabled: `frontend-design`, `caveman`, `ui-ux-pro-max`, from marketplaces declar
 
 | Tool | Used for |
 |------|----------|
-| `node` / `npx` | MCP servers (`@modelcontextprotocol/server-filesystem`, `@21st-dev/magic`), `npx skills` |
+| `node` / `npx` | MCP servers (`filesystem`, `magic`, `sequential-thinking`), `npx skills` |
+| `uvx` (from `uv`) | runs the `fetch` MCP server (`uvx mcp-server-fetch`) |
 | `bun` | runs `ccstatusline`; `install.sh` will `bun add -g ccstatusline` if absent |
 | `ccstatusline` | the statusline (referenced by `settings.json`) |
 | `python3` | MCP restore (secret expansion) in `install.sh` |

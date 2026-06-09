@@ -2,6 +2,9 @@
 # Capture current live Claude config INTO this repo so changes show up as git diffs.
 # Does NOT stage or commit — you review + commit manually.
 #   - MCP servers:  ~/.claude.json  ->  mcp-servers.json  (secrets scrubbed to ${VAR})
+#                   captures user-scope AND project-scope servers; project-scope ones are
+#                   promoted to user scope. Machine-specific servers in SKIP (below) are
+#                   dropped — they reference local paths that won't port to another machine.
 #   - skills:       ~/.agents/skills/*  ->  skills/   (+ refresh agents-skill-lock.json)
 # Settings/plugins need no capture: settings.json is a live symlink into this repo.
 set -euo pipefail
@@ -15,7 +18,23 @@ import json, os, re, sys
 repo = sys.argv[1]
 home = os.path.expanduser("~")
 
-live = json.load(open(os.path.join(home, ".claude.json"))).get("mcpServers", {})
+# Servers tied to a machine-specific local path — captured nowhere, restored nowhere.
+SKIP = {"obsidian"}  # @bitbonsai/mcpvault points at a hardcoded vault dir; not portable
+
+raw = json.load(open(os.path.join(home, ".claude.json")))
+
+# Merge user-scope + every project-scope server. User scope wins on name collision.
+live = dict(raw.get("mcpServers") or {})
+project_only = []
+for proj in (raw.get("projects") or {}).values():
+    for name, cfg in ((proj or {}).get("mcpServers") or {}).items():
+        if name not in live:
+            live[name] = cfg
+            project_only.append(name)
+
+skipped = sorted(n for n in list(live) if n in SKIP)
+for n in skipped:
+    del live[n]
 
 # value -> VARNAME, from secrets.env
 secrets = {}
@@ -54,6 +73,11 @@ with open(os.path.join(repo, "mcp-servers.json"), "w") as f:
     f.write("\n")
 
 print(f"captured {len(out)} MCP server(s): {', '.join(out) or '(none)'}")
+promoted = [n for n in project_only if n in out]
+if promoted:
+    print(f"  promoted project-scope -> user scope: {', '.join(promoted)}")
+if skipped:
+    print(f"  skipped (machine-specific, in SKIP): {', '.join(skipped)}")
 for w in warnings:
     print("WARN:", w)
 PY

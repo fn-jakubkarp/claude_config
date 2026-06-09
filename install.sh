@@ -76,6 +76,8 @@ echo "--- dependency check ---"
 for dep in node npx bun jq python3 claude; do
     if command -v "$dep" >/dev/null 2>&1; then echo "ok   $dep"; else echo "MISSING $dep"; fi
 done
+# uvx (from uv) runs the 'fetch' MCP server — warn but don't block.
+command -v uvx >/dev/null 2>&1 && echo "ok   uvx" || echo "MISSING uvx (needed by 'fetch' MCP — install: curl -LsSf https://astral.sh/uv/install.sh | sh)"
 command -v gh >/dev/null 2>&1 && echo "ok   gh (for publishing)" || echo "note gh missing (only needed to publish the repo)"
 if ! command -v ccstatusline >/dev/null 2>&1; then
     if command -v bun >/dev/null 2>&1; then

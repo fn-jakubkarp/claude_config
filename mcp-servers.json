@@ -19,5 +19,21 @@
     "env": {
       "API_KEY": "${MAGIC_API_KEY}"
     }
+  },
+  "sequential-thinking": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "@modelcontextprotocol/server-sequential-thinking"
+    ],
+    "env": {}
+  },
+  "fetch": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-server-fetch"
+    ],
+    "env": {}
   }
 }
