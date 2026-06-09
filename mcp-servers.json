@@ -2,13 +2,22 @@
   "filesystem": {
     "type": "stdio",
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-filesystem", "$HOME/"],
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-filesystem",
+      "$HOME/"
+    ],
     "env": {}
   },
   "magic": {
     "type": "stdio",
     "command": "npx",
-    "args": ["-y", "@21st-dev/magic@latest"],
-    "env": { "API_KEY": "${MAGIC_API_KEY}" }
+    "args": [
+      "-y",
+      "@21st-dev/magic@latest"
+    ],
+    "env": {
+      "API_KEY": "${MAGIC_API_KEY}"
+    }
   }
 }

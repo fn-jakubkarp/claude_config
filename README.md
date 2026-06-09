@@ -27,7 +27,8 @@ ccstatusline/settings.json   # statusline config (symlinked into ~/.config)
 statusline-command.sh        # offline fallback statusline (not wired in by default)
 skills/<name>/               # 20 vendored skills (real content)
 agents-skill-lock.json       # provenance of the npx-managed skills
-install.sh                   # idempotent installer
+install.sh                   # idempotent installer (repo -> machine)
+sync.sh                      # capture live config back into the repo (machine -> repo)
 ```
 
 ## How skills resolve
@@ -101,10 +102,17 @@ out of band (scp / password manager).
 
 ## Adding more later
 
-- **Skill**: `npx skills add <repo>` → `rsync` it into `skills/` → re-run `install.sh` → commit.
-- **Plugin**: install in Claude Code (`/plugin`) → it lands in `settings.json` → commit.
-- **MCP server**: add an entry to `mcp-servers.json` (use `${VAR}` for any secret, add the
-  var to `secrets.env` + `secrets.env.example`) → re-run `install.sh` → commit.
+Add things the normal way, then run `./sync.sh` to pull the live state back into the
+repo, review the diff, and commit yourself. `sync.sh` only writes files — it never
+stages or commits.
+
+- **Skill**: `npx skills add <repo>` → `./sync.sh`
+- **MCP server**: `claude mcp add …` (or edit `~/.claude.json`) → `./sync.sh`
+- **Plugin / settings**: install via `/plugin` or edit settings — already live in `settings.json` (symlink)
+
+Secrets are auto-scrubbed: any MCP value whose plaintext is in `secrets.env` is rewritten
+to `${VAR}`. For a **new** secret-bearing server, add the key to `secrets.env` *before*
+syncing — otherwise `sync.sh` writes a `${KEY}` placeholder and warns you to fill it in.
 
 ## Permissions
 
