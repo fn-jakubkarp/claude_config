@@ -91,4 +91,4 @@ fi
 
 echo
 echo "done. In Claude Code run: /reload-skills  and  /reload-plugins"
-echo "plugins (frontend-design, caveman, ui-ux-pro-max) reinstall from settings.json on launch."
+echo "plugins listed in settings.json (enabledPlugins) reinstall on launch."

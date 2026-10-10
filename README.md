@@ -51,7 +51,7 @@ as a convenience.
 
 ## MCP servers & secrets
 
-`mcp-servers.json` is committed with placeholders (`$HOME`, `${MAGIC_API_KEY}`) — no secrets.
+`mcp-servers.json` is committed with placeholders (`$HOME`, `${VAR}`) — no secrets.
 Real keys live in `secrets.env` (gitignored). `install.sh` sources `secrets.env`, expands the
 placeholders, and writes each server into `~/.claude.json` at **user scope** via
 `claude mcp add-json`. Any server whose secret is missing is skipped with a warning.
@@ -60,8 +60,6 @@ Currently configured (all restored at user scope):
 
 | Server | Runtime | Secret |
 |--------|---------|--------|
-| `filesystem` | `npx @modelcontextprotocol/server-filesystem` | — |
-| `magic` | `npx @21st-dev/magic` | `MAGIC_API_KEY` |
 | `sequential-thinking` | `npx @modelcontextprotocol/server-sequential-thinking` | — |
 | `fetch` | `uvx mcp-server-fetch` | — (needs `uvx`) |
 
@@ -76,8 +74,8 @@ any other path-bound server you don't want vendored.
 
 ## Plugins
 
-Enabled: `frontend-design`, `caveman`, `ui-ux-pro-max`, from marketplaces declared in
-`settings.json`. Claude Code reinstalls them automatically on launch — nothing to vendor.
+Listed in `settings.json` (`enabledPlugins`), from marketplaces declared there in
+`extraKnownMarketplaces`. Claude Code reinstalls them on launch, nothing to vendor.
 
 ## CLI dependencies
 
@@ -85,7 +83,7 @@ Enabled: `frontend-design`, `caveman`, `ui-ux-pro-max`, from marketplaces declar
 
 | Tool | Used for |
 |------|----------|
-| `node` / `npx` | MCP servers (`filesystem`, `magic`, `sequential-thinking`), `npx skills` |
+| `node` / `npx` | MCP servers (`sequential-thinking`), `npx skills` |
 | `uvx` (from `uv`) | runs the `fetch` MCP server (`uvx mcp-server-fetch`) |
 | `bun` | runs `ccstatusline`; `install.sh` will `bun add -g ccstatusline` if absent |
 | `ccstatusline` | the statusline (referenced by `settings.json`) |
