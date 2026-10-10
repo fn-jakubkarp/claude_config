@@ -9,7 +9,8 @@ plugins, MCP servers, settings, and statusline. Clone it on any machine, drop in
 | Area | How it's stored | Restored by |
 |------|-----------------|-------------|
 | Global settings | `settings.json` (model, statusline, plugins, marketplaces, permissions) | symlink → `~/.claude/settings.json` |
-| Skills | **vendored** real content in `skills/` (20 skills) | symlink → `~/.claude/skills/<name>` |
+| Global instructions | `global-CLAUDE.md` | symlink → `~/.claude/CLAUDE.md` |
+| Skills | **vendored** real content in `skills/` | symlink → `~/.claude/skills/<name>` |
 | Plugins | listed in `settings.json` (`enabledPlugins` + `extraKnownMarketplaces`) | Claude Code reinstalls on launch |
 | MCP servers | `mcp-servers.json` (portable, secret-free) | `install.sh` → `claude mcp add-json` (user scope) |
 | Secrets | `secrets.env` (**gitignored**), template in `secrets.env.example` | sourced by `install.sh`, injected into MCP config |
@@ -20,12 +21,13 @@ plugins, MCP servers, settings, and statusline. Clone it on any machine, drop in
 
 ```
 settings.json                # global Claude settings (symlinked into ~/.claude)
+global-CLAUDE.md             # global instructions (symlinked to ~/.claude/CLAUDE.md)
 settings.local.json.example  # template for machine-local perms (real one is gitignored)
 mcp-servers.json             # MCP server defs with $HOME / ${SECRET} placeholders
 secrets.env.example          # copy to secrets.env, fill in, never commit
 ccstatusline/settings.json   # statusline config (symlinked into ~/.config)
 statusline-command.sh        # offline fallback statusline (not wired in by default)
-skills/<name>/               # 20 vendored skills (real content)
+skills/<name>/               # vendored skills (real content)
 agents-skill-lock.json       # provenance of the npx-managed skills
 install.sh                   # idempotent installer (repo -> machine)
 sync.sh                      # capture live config back into the repo (machine -> repo)

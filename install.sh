@@ -23,8 +23,9 @@ link() {
     echo "linked $linkpath -> $target"
 }
 
-# 1. global settings
+# 1. global settings and CLAUDE.md
 link "$REPO/settings.json" "$CLAUDE/settings.json"
+link "$REPO/global-CLAUDE.md" "$CLAUDE/CLAUDE.md"
 
 # 2. statusline config (ccstatusline reads ~/.config/ccstatusline/settings.json)
 link "$REPO/ccstatusline/settings.json" "$HOME/.config/ccstatusline/settings.json"
